@@ -1,9 +1,6 @@
-Gemini said
-Here is the complete Markdown for Hidden Eye, structured with the exact same professional formatting, iconography, and architectural depth as your Spotify project.
-
-👁️ Hidden Eye (v1.0.0)
+# 👁️ Hidden Eye (v1.0.0)
 A high-performance, multi-threaded Windows monitoring framework designed for authorized security auditing. Built with Python and Win32 APIs, Hidden Eye provides real-time data exfiltration of keystrokes, ambient audio, and visual intelligence via secure Webhooks.
-
+Line 1
 🚀 Features
 Advanced Persistence: Leverages schtasks and the Windows Task Scheduler to ensure the application resumes monitoring immediately upon system logon.
 
