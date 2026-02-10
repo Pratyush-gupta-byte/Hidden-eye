@@ -79,4 +79,5 @@ We are focused on increasing the modularity of the exfiltration engine. Current 
 
 * **Libraries**: Powered by pynput for input hooking and PyAutoGUI for visual capture.
 
-[!WARNING] Legal Notice: This tool is for educational purposes only. Unauthorized use of this software against systems you do not have explicit permission to audit is strictly prohibited and may be illegal.
+[!WARNING]
+Legal Notice: This tool is for educational purposes only. Unauthorized use of this software against systems you do not have explicit permission to audit is strictly prohibited and may be illegal.
